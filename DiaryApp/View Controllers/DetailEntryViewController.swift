@@ -15,11 +15,7 @@ class DetailEntryViewController: UIViewController {
     var locationManager: CLLocationManager?
     var longitude: Double?
     var latitude: Double?
-    var entry: Entry?{
-        didSet {
-            updateViews()
-        }
-    }
+    var entry: Entry?
     
     //MARK: IBoutlets
     @IBOutlet weak var nameTextField: UITextField!
@@ -57,19 +53,26 @@ class DetailEntryViewController: UIViewController {
             print("Error in file: \(#file), in the body of the function: \(#function) on line: \(#line)\n")
             return
         }
+        
         if let passedInEntry = entry {
             //we already have an entry so we updating
             EntryController.shared.update(entry: passedInEntry, withNewName: name, withNewBody: bodyTextView.text, withNewLongitude: long, withNewLatitude: lat)
+            print("This is the Entry's long: \(long) and lat: \(lat)")
+             self.navigationController?.popToRootViewController(animated: true)
         } else {
             //we  dont have an entry so create
             EntryController.shared.createEntryWith(name: name, body: bodyTextView.text, longitude: long, latitude: lat)
+            print("This is the Entry's long: \(long) and lat: \(lat)")
+            self.navigationController?.popToRootViewController(animated: true)
         }
-        self.navigationController?.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func deleteButtonTapped(_ sender: UIButton) {
         if let passedInEntry = entry {
             EntryController.shared.delete(entry: passedInEntry)
+            nameTextField.text = ""
+            bodyTextView.text = ""
+            self.deleteProperties.isHidden = true
         }
         self.navigationController?.popToRootViewController(animated: true)
     }
@@ -119,6 +122,9 @@ extension DetailEntryViewController: CLLocationManagerDelegate {
         
         self.latitude = location.coordinate.latitude
         self.longitude = location.coordinate.longitude
-        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Error in file: \(#file), in the body of the function: \(#function) on line: \(#line)\n")
     }
 }
