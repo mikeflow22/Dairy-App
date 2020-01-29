@@ -79,7 +79,7 @@ class DetailEntryViewController: UIViewController {
             self.navigationController?.popToRootViewController(animated: true)
         }
     }
-    
+
     @IBAction func deleteButtonTapped(_ sender: UIButton) {
         if let passedInEntry = entry {
             EntryController.shared.delete(entry: passedInEntry)
