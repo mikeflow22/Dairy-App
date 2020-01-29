@@ -29,7 +29,7 @@ class DetailEntryViewController: UIViewController {
         setUpLocationManager()
     }
     
-    //MARK: - Instance Methods
+    //MARK: - Private Methods
     private func updateViews(){
         guard let passedInEntry = entry, isViewLoaded else {
             self.title = "Enter New Entry"
@@ -44,12 +44,25 @@ class DetailEntryViewController: UIViewController {
         deleteProperties.isHidden = false
     }
     
+    private func noNameForEntryAlert(){
+        let alert = UIAlertController(title: "Warning", message: "Please enter name for entry.", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+    
     //MARK: - IBActions
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
         //check authorization
         checkLocationAuthorization()
         
-        guard let name = nameTextField.text, !name.isEmpty, let long = longitude, let lat = latitude else {
+        guard let name = nameTextField.text, !name.isEmpty else {
+            print("Error in file: \(#file), in the body of the function: \(#function) on line: \(#line)\n")
+            noNameForEntryAlert()
+            return
+        }
+    
+        guard let long = longitude, let lat = latitude else {
             print("Error in file: \(#file), in the body of the function: \(#function) on line: \(#line)\n")
             return
         }
