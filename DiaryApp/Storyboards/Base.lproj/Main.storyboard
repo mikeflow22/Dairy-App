@@ -10,7 +10,7 @@
         <!--Entry List-->
         <scene sceneID="fiH-OX-ql6">
             <objects>
-                <tableViewController id="Yh2-fh-b46" sceneMemberID="viewController">
+                <tableViewController id="Yh2-fh-b46" customClass="EntryListTableViewController" customModule="DiaryApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kK3-QP-dLw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -61,10 +61,10 @@
             </objects>
             <point key="canvasLocation" x="336" y="155"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail Entry View Controller-->
         <scene sceneID="uR7-M0-bBR">
             <objects>
-                <viewController id="Gip-99-hhi" sceneMemberID="viewController">
+                <viewController id="Gip-99-hhi" customClass="DetailEntryViewController" customModule="DiaryApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Odh-hU-srv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,6 +93,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPV-gC-nUE">
                                 <rect key="frame" x="184.5" y="832" width="45" height="30"/>
                                 <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="deleteButtonTapped:" destination="Gip-99-hhi" eventType="touchUpInside" id="5Xo-cd-s5i"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -106,8 +109,18 @@
                         <viewLayoutGuide key="safeArea" id="EPb-5h-691"/>
                     </view>
                     <navigationItem key="navigationItem" id="vNN-Ih-vaJ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="0Gg-Tm-wlc"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="0Gg-Tm-wlc">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="Gip-99-hhi" id="PcR-st-sb5"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="bodyTextView" destination="0aG-dT-l5B" id="Kqe-qv-ImY"/>
+                        <outlet property="deleteProperties" destination="uPV-gC-nUE" id="Fu5-vA-PjX"/>
+                        <outlet property="nameTextField" destination="GKK-Dw-Nv9" id="Ufk-YL-UZr"/>
+                        <outlet property="saveProperties" destination="0Gg-Tm-wlc" id="ZAu-DJ-Tu9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0HM-sX-uTj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
