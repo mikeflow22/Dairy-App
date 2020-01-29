@@ -18,6 +18,7 @@
 		1B97831723E13CC8006DDE9C /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B97831623E13CC8006DDE9C /* EntryController.swift */; };
 		1B97831923E14224006DDE9C /* EntryListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B97831823E14224006DDE9C /* EntryListTableViewController.swift */; };
 		1B97831B23E14235006DDE9C /* DetailEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B97831A23E14235006DDE9C /* DetailEntryViewController.swift */; };
+		1B97831D23E145BD006DDE9C /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B97831C23E145BD006DDE9C /* Date+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		1B97831623E13CC8006DDE9C /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
 		1B97831823E14224006DDE9C /* EntryListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		1B97831A23E14235006DDE9C /* DetailEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEntryViewController.swift; sourceTree = "<group>"; };
+		1B97831C23E145BD006DDE9C /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 		1B97830C23E1384F006DDE9C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				1B97831C23E145BD006DDE9C /* Date+Extension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				1B97831423E13B58006DDE9C /* Entry+Convenience.swift in Sources */,
 				1B97831B23E14235006DDE9C /* DetailEntryViewController.swift in Sources */,
 				1B97831023E13A29006DDE9C /* DiaryApp.xcdatamodeld in Sources */,
+				1B97831D23E145BD006DDE9C /* Date+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
