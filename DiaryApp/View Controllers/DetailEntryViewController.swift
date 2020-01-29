@@ -18,6 +18,7 @@ class DetailEntryViewController: UIViewController {
     var entry: Entry?
     
     //MARK: IBoutlets
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var bodyTextView: UITextView!
     @IBOutlet weak var saveProperties: UIBarButtonItem!
@@ -42,6 +43,12 @@ class DetailEntryViewController: UIViewController {
         nameTextField.text = passedInEntry.name
         bodyTextView.text = passedInEntry.body
         deleteProperties.isHidden = false
+        
+        //grab the string representation of the mood, see if the string is a property of the enum, now that we have an EntryMood case, we can use that to find it in the array
+        if let entryMoodString = passedInEntry.mood, let mood = EntryMood(rawValue: entryMoodString), let moodIndex = EntryMood.allMoods.firstIndex(of: mood){
+            //use the moodIndex to assign it to the selectedSegmentIndex
+            segmentedControl.selectedSegmentIndex = moodIndex
+        }
     }
     
     private func noNameForEntryAlert(){
@@ -55,6 +62,9 @@ class DetailEntryViewController: UIViewController {
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
         //check authorization
         checkLocationAuthorization()
+        let segmentedIndex = segmentedControl.selectedSegmentIndex
+        //use the index to subscript  the entryMood array
+        let mood = EntryMood.allMoods[segmentedIndex]
         
         guard let name = nameTextField.text, !name.isEmpty else {
             print("Error in file: \(#file), in the body of the function: \(#function) on line: \(#line)\n")
@@ -69,12 +79,12 @@ class DetailEntryViewController: UIViewController {
         
         if let passedInEntry = entry {
             //we already have an entry so we updating
-            EntryController.shared.update(entry: passedInEntry, withNewName: name, withNewBody: bodyTextView.text, withNewLongitude: long, withNewLatitude: lat)
+            EntryController.shared.update(entry: passedInEntry, withNewName: name, withNewMood: mood, withNewBody: bodyTextView.text, withNewLongitude: long, withNewLatitude: lat)
             print("This is the Entry's long: \(long) and lat: \(lat)")
              self.navigationController?.popToRootViewController(animated: true)
         } else {
             //we  dont have an entry so create
-            EntryController.shared.createEntryWith(name: name, body: bodyTextView.text, longitude: long, latitude: lat)
+            EntryController.shared.createEntryWith(name: name, mood: mood, body: bodyTextView.text, longitude: long, latitude: lat)
             print("This is the Entry's long: \(long) and lat: \(lat)")
             self.navigationController?.popToRootViewController(animated: true)
         }

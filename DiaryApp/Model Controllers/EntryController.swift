@@ -28,9 +28,10 @@ class EntryController {
     }
     
     //MARK: - CRUD Methods
-    func createEntryWith(name: String, body: String, longitude: Double, latitude: Double){
-        Entry(name: name, body: body, longitude: longitude, latitude: latitude)
+    func createEntryWith(name: String, mood: EntryMood, body: String, longitude: Double, latitude: Double){
+        Entry(name: name, mood: mood, body: body, longitude: longitude, latitude: latitude)
         saveToPersistentStore()
+        
     }
     
     func delete(entry: Entry){
@@ -38,9 +39,10 @@ class EntryController {
         saveToPersistentStore()
     }
     
-    func update(entry: Entry, withNewName name: String, withNewBody body: String, withNewLongitude longitude: Double, withNewLatitude latitude: Double, withNewTimestamp timestamp: Date = Date()){
+    func update(entry: Entry, withNewName name: String, withNewMood mood: EntryMood, withNewBody body: String, withNewLongitude longitude: Double, withNewLatitude latitude: Double, withNewTimestamp timestamp: Date = Date()){
         entry.name = name
         entry.body = body
+        entry.mood = mood.rawValue
         entry.longitude = longitude
         entry.latitude = latitude
         entry.timestamp = timestamp

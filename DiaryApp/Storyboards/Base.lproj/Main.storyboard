@@ -72,13 +72,21 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3y9-Qo-fTG">
                                 <rect key="frame" x="16" y="104" width="382" height="300"/>
                                 <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4L6-nA-eXd">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="32"/>
+                                        <segments>
+                                            <segment title="😀"/>
+                                            <segment title="🤨"/>
+                                            <segment title="😢"/>
+                                        </segments>
+                                    </segmentedControl>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name of Entry" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GKK-Dw-Nv9">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="34"/>
+                                        <rect key="frame" x="0.0" y="39" width="382" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0aG-dT-l5B">
-                                        <rect key="frame" x="0.0" y="42" width="382" height="258"/>
+                                        <rect key="frame" x="0.0" y="81" width="382" height="219"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -119,6 +127,7 @@
                         <outlet property="deleteProperties" destination="uPV-gC-nUE" id="Fu5-vA-PjX"/>
                         <outlet property="nameTextField" destination="GKK-Dw-Nv9" id="Ufk-YL-UZr"/>
                         <outlet property="saveProperties" destination="0Gg-Tm-wlc" id="ZAu-DJ-Tu9"/>
+                        <outlet property="segmentedControl" destination="4L6-nA-eXd" id="55M-d1-uui"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0HM-sX-uTj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
