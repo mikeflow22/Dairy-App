@@ -19,7 +19,6 @@
 		1B97831923E14224006DDE9C /* EntryListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B97831823E14224006DDE9C /* EntryListTableViewController.swift */; };
 		1B97831B23E14235006DDE9C /* DetailEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B97831A23E14235006DDE9C /* DetailEntryViewController.swift */; };
 		1B97831D23E145BD006DDE9C /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B97831C23E145BD006DDE9C /* Date+Extension.swift */; };
-		1B97831F23E14C43006DDE9C /* Geoloaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B97831E23E14C43006DDE9C /* Geoloaction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +36,6 @@
 		1B97831823E14224006DDE9C /* EntryListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		1B97831A23E14235006DDE9C /* DetailEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEntryViewController.swift; sourceTree = "<group>"; };
 		1B97831C23E145BD006DDE9C /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
-		1B97831E23E14C43006DDE9C /* Geoloaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geoloaction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +137,6 @@
 			isa = PBXGroup;
 			children = (
 				1B97831623E13CC8006DDE9C /* EntryController.swift */,
-				1B97831E23E14C43006DDE9C /* Geoloaction.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -217,7 +214,6 @@
 			files = (
 				1B97831223E13AD8006DDE9C /* CoreDataStack.swift in Sources */,
 				1B97831723E13CC8006DDE9C /* EntryController.swift in Sources */,
-				1B97831F23E14C43006DDE9C /* Geoloaction.swift in Sources */,
 				1B9782F523E136DE006DDE9C /* AppDelegate.swift in Sources */,
 				1B97831923E14224006DDE9C /* EntryListTableViewController.swift in Sources */,
 				1B9782F723E136DE006DDE9C /* SceneDelegate.swift in Sources */,

@@ -17,7 +17,6 @@ class EntryListTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         return EntryController.shared.fetchedResultsController.sections?.count ?? 0
     }
@@ -26,13 +25,11 @@ class EntryListTableViewController: UITableViewController {
         return EntryController.shared.fetchedResultsController.sections?[section].numberOfObjects ?? 0
     }
 
-   
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "entryCell", for: indexPath)
         let entry  = EntryController.shared.fetchedResultsController.object(at: indexPath)
         cell.textLabel?.text = entry.name
         cell.detailTextLabel?.text = entry.timestamp?.prettyDate()
-        // Configure the cell...
 
         return cell
     }
@@ -42,9 +39,6 @@ class EntryListTableViewController: UITableViewController {
         if editingStyle == .delete {
              let entry = EntryController.shared.fetchedResultsController.object(at: indexPath)
             EntryController.shared.delete(entry: entry)
-            
-            // Delete the row from the data source
-//            tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
    
@@ -63,6 +57,7 @@ class EntryListTableViewController: UITableViewController {
     }
 }
 
+//MARK: - NSFetchedResultsControllerDelegate Methods
 extension EntryListTableViewController: NSFetchedResultsControllerDelegate {
     //will tell the tableViewController get ready to do something.
        func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {

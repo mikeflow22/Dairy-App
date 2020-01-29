@@ -10,8 +10,8 @@ import Foundation
 import CoreData
 
 class EntryController {
-    static let shared = EntryController()
     
+    static let shared = EntryController()
     var fetchedResultsController: NSFetchedResultsController<Entry>
     
     init(){
@@ -27,12 +27,7 @@ class EntryController {
         }
     }
     
-//    var entries: [Entry] {
-//        let fetchRequest: NSFetchRequest<Entry> = Entry.fetchRequest()
-//        return (try? CoreDataStack.shared.mainContext.fetch(fetchRequest)) ?? []
-//    }
-    
-    
+    //MARK: - CRUD Methods
     func createEntryWith(name: String, body: String, longitude: Double, latitude: Double){
         Entry(name: name, body: body, longitude: longitude, latitude: latitude)
         saveToPersistentStore()
