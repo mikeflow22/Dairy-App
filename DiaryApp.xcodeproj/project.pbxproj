@@ -16,6 +16,7 @@
 		1B97831023E13A29006DDE9C /* DiaryApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1B97830E23E13A29006DDE9C /* DiaryApp.xcdatamodeld */; };
 		1B97831223E13AD8006DDE9C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B97831123E13AD8006DDE9C /* CoreDataStack.swift */; };
 		1B97831423E13B58006DDE9C /* Entry+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B97831323E13B58006DDE9C /* Entry+Convenience.swift */; };
+		1B97831723E13CC8006DDE9C /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B97831623E13CC8006DDE9C /* EntryController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		1B97830F23E13A29006DDE9C /* DiaryApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DiaryApp.xcdatamodel; sourceTree = "<group>"; };
 		1B97831123E13AD8006DDE9C /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		1B97831323E13B58006DDE9C /* Entry+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry+Convenience.swift"; sourceTree = "<group>"; };
+		1B97831623E13CC8006DDE9C /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,12 +64,13 @@
 		1B9782F323E136DE006DDE9C /* DiaryApp */ = {
 			isa = PBXGroup;
 			children = (
-				1B97830D23E13857006DDE9C /* Resources */,
-				1B97830C23E1384F006DDE9C /* Helpers */,
 				1B97830B23E13836006DDE9C /* Storyboards */,
-				1B97830A23E1382D006DDE9C /* Views */,
 				1B97830923E13823006DDE9C /* View Controllers */,
+				1B97830A23E1382D006DDE9C /* Views */,
+				1B97831523E13CAE006DDE9C /* Model Controllers */,
 				1B97830823E13814006DDE9C /* Model */,
+				1B97830C23E1384F006DDE9C /* Helpers */,
+				1B97830D23E13857006DDE9C /* Resources */,
 			);
 			path = DiaryApp;
 			sourceTree = "<group>";
@@ -122,6 +125,14 @@
 				1B97830223E136DF006DDE9C /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		1B97831523E13CAE006DDE9C /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1B97831623E13CC8006DDE9C /* EntryController.swift */,
+			);
+			path = "Model Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +208,7 @@
 			files = (
 				1B97831223E13AD8006DDE9C /* CoreDataStack.swift in Sources */,
 				1B9782F923E136DE006DDE9C /* ViewController.swift in Sources */,
+				1B97831723E13CC8006DDE9C /* EntryController.swift in Sources */,
 				1B9782F523E136DE006DDE9C /* AppDelegate.swift in Sources */,
 				1B9782F723E136DE006DDE9C /* SceneDelegate.swift in Sources */,
 				1B97831423E13B58006DDE9C /* Entry+Convenience.swift in Sources */,
