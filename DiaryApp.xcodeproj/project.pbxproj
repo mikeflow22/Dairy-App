@@ -14,6 +14,7 @@
 		1B9782FE23E136DF006DDE9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B9782FD23E136DF006DDE9C /* Assets.xcassets */; };
 		1B97830123E136DF006DDE9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B9782FF23E136DF006DDE9C /* LaunchScreen.storyboard */; };
 		1B97831023E13A29006DDE9C /* DiaryApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1B97830E23E13A29006DDE9C /* DiaryApp.xcdatamodeld */; };
+		1B97831223E13AD8006DDE9C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B97831123E13AD8006DDE9C /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		1B97830023E136DF006DDE9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B97830223E136DF006DDE9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B97830F23E13A29006DDE9C /* DiaryApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DiaryApp.xcdatamodel; sourceTree = "<group>"; };
+		1B97831123E13AD8006DDE9C /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				1B97830E23E13A29006DDE9C /* DiaryApp.xcdatamodeld */,
+				1B97831123E13AD8006DDE9C /* CoreDataStack.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B97831223E13AD8006DDE9C /* CoreDataStack.swift in Sources */,
 				1B9782F923E136DE006DDE9C /* ViewController.swift in Sources */,
 				1B9782F523E136DE006DDE9C /* AppDelegate.swift in Sources */,
 				1B9782F723E136DE006DDE9C /* SceneDelegate.swift in Sources */,
