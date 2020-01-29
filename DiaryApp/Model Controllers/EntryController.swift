@@ -16,8 +16,8 @@ class EntryController {
     
     init(){
         let fetchRequst: NSFetchRequest<Entry> =  Entry.fetchRequest()
-        fetchRequst.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: true)]
-        let resultsController = NSFetchedResultsController(fetchRequest: fetchRequst, managedObjectContext: CoreDataStack.shared.mainContext, sectionNameKeyPath: nil, cacheName: nil)
+        fetchRequst.sortDescriptors = [ NSSortDescriptor(key: "mood", ascending: true), NSSortDescriptor(key: "timestamp", ascending: true)]
+        let resultsController = NSFetchedResultsController(fetchRequest: fetchRequst, managedObjectContext: CoreDataStack.shared.mainContext, sectionNameKeyPath: "mood", cacheName: nil)
         self.fetchedResultsController = resultsController
         
         do {

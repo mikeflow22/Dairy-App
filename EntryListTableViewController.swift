@@ -41,6 +41,10 @@ class EntryListTableViewController: UITableViewController {
             EntryController.shared.delete(entry: entry)
         }
     }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return EntryController.shared.fetchedResultsController.sections?[section].name
+    }
    
     // MARK: - Navigation
 
